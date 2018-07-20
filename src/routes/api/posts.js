@@ -43,7 +43,7 @@ postRouter.get('/:id', (req, res) => {
                     files = files.map(file => {
                         let fileDto = fileMapper.toDto(file)
 
-                        fileDto.path = `//${config.apiRoot}/download/${fileDto._id}`
+                        fileDto.path = `${config.apiRoot}/download/${fileDto._id}`
 
                         if (!download) {
                             delete fileDto._id
