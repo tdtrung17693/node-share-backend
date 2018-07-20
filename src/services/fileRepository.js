@@ -7,12 +7,13 @@ const fileRepository = {
     },
 
     find (id) {
+        console.log(id)
         return new Promise((resolve, reject) => {
             this.dbHandler
                 .collection('files')
                 .findOne({ _id: ObjectId(id) }, (err, file) => {
                     if (err) return reject(err)
-                        console.log(fileMapper.toEntity(file))
+
                     resolve(file ? fileMapper.toEntity(file) : null)
                 })
         })
