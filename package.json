@@ -7,6 +7,7 @@
     "build": "babel src -s -D -d dist",
     "dev": "yarn build && NODE_ENV=development nodemon  -r dotenv/config ./dist/server.js",
     "start": "node ./dist/server.js",
+    "start:esm": "NODE_ENV=development nodemon -r esm -r dotenv/config ./src/server.js",
     "clean": "rm -rf build && mkdir build",
     "postinstall": "yarn build"
   },
@@ -17,7 +18,7 @@
     "azure-storage": "^2.10.0",
     "cors": "^2.8.4",
     "dotenv": "^6.0.0",
-    "esm": "https://github.com/standard-things/esm.git",
+    "esm": "^3.0.71",
     "express": "^4.16.3",
     "mongodb": "^3.1.1",
     "morgan": "^1.9.0",

@@ -14,6 +14,10 @@ import { downloadOne } from '../../libs/downloader'
 
 const apiRouter = Router()
 
+apiRouter.get('/', (req, res) => {
+    res.status(200).send({version: '1.0'})
+})
+
 apiRouter.post('/upload', upload.array('files'), (req, res, next) => {
     let uploadFiles = req.files || []
 
